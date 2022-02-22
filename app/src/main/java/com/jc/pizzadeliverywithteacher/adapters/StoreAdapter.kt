@@ -38,6 +38,8 @@ class StoreAdapter(
             .load(data.logoImageURL)
             .into(imgLogo)
 
+        ratingBar.rating = data.rating.toFloat()
+
         return row
     }
 
