@@ -1,6 +1,8 @@
 package com.jc.pizzadeliverywithteacher
 
 import android.Manifest
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -39,10 +41,14 @@ class ViewStoreDetailActivity : AppCompatActivity() {
     }
 
     fun setUpEvents() {
-
+//        클릭 될 때마다 만든 변수를 사용 만 한다.
 //        권한 관련 변수를, 화면이 만들어질 때 한번만 세팅
         val pl = object : PermissionListener {
             override fun onPermissionGranted() {
+
+                val myUri = Uri.parse("tel:${mStoreData.phoneNum}")
+                val myIntent = Intent(Intent.ACTION_CALL, myUri)
+                startActivity(myIntent)
 
             }
 
@@ -52,16 +58,12 @@ class ViewStoreDetailActivity : AppCompatActivity() {
 
         }
 
-
-
         btnCall.setOnClickListener {
-//            클릭 될 때마다 만든 변수를 사용 만 한다.
 
             TedPermission.create()
                 .setPermissionListener(pl)
                 .setPermissions(Manifest.permission.CALL_PHONE)
                 .check()
-
         }
 
     }
