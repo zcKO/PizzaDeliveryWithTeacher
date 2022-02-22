@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
+import android.widget.TextView
 import com.jc.pizzadeliverywithteacher.R
 import com.jc.pizzadeliverywithteacher.datas.StoreData
+import com.willy.ratingbar.ScaleRatingBar
 
 class StoreAdapter(
     val mContext: Context,
@@ -23,6 +26,13 @@ class StoreAdapter(
         }
 
         val row = tempRow!!
+        val data = mStoreList[position]
+        val imgLogo = row.findViewById<ImageView>(R.id.imgLogo)
+        val txtStoreName = row.findViewById<TextView>(R.id.txtStoreName)
+        val ratingBar = row.findViewById<ScaleRatingBar>(R.id.ratingBar)
+
+        txtStoreName.text = data.name
+
 
         return row
     }
