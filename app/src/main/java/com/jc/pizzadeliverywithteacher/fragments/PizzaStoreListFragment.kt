@@ -1,11 +1,13 @@
 package com.jc.pizzadeliverywithteacher.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.jc.pizzadeliverywithteacher.R
+import com.jc.pizzadeliverywithteacher.ViewStoreDetailActivity
 import com.jc.pizzadeliverywithteacher.adapters.StoreAdapter
 import com.jc.pizzadeliverywithteacher.datas.StoreData
 import kotlinx.android.synthetic.main.fragment_pizza_store_list.*
@@ -46,6 +48,13 @@ class PizzaStoreListFragment: Fragment() {
     }
 
     fun setUpEvents() {
+
+        pizzaStoreListView.setOnItemClickListener { parent, view, position, id ->
+
+            val myIntent = Intent(requireContext(), ViewStoreDetailActivity::class.java)
+            startActivity(myIntent)
+
+        }
 
     }
 
