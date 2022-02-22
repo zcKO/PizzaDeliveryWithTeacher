@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         mViewPagerAdapter = MainViewPagerAdapter(supportFragmentManager)
         mainViewPager.adapter = mViewPagerAdapter
+//        도전 과제에서 치킨 가게 목록 추가시 mainViewPager.offscreenLimit = 3 설정을 해주어야 정상 동작.
         mainTabLayout.setupWithViewPager(mainViewPager)
 
     }
