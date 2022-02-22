@@ -11,8 +11,8 @@ import com.jc.pizzadeliverywithteacher.datas.StoreData
 class StoreAdapter(
     val mContext: Context,
     resId: Int,
-    val storeList: ArrayList<StoreData>
-): ArrayAdapter<StoreData>(mContext, resId, storeList) {
+    val mStoreList: ArrayList<StoreData>
+): ArrayAdapter<StoreData>(mContext, resId, mStoreList) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
