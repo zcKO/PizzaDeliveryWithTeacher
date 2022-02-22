@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.jc.pizzadeliverywithteacher.R
 import com.jc.pizzadeliverywithteacher.datas.StoreData
 import com.willy.ratingbar.ScaleRatingBar
@@ -33,6 +34,9 @@ class StoreAdapter(
 
         txtStoreName.text = data.name
 
+        Glide.with(mContext)
+            .load(data.logoImageURL)
+            .into(imgLogo)
 
         return row
     }
