@@ -3,7 +3,6 @@
     package="com.jc.pizzadeliverywithteacher">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -14,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaDeliveryWithTeacher"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".EditNicknameActivity"
+            android:exported="false" />
         <activity
             android:name=".ViewStoreDetailActivity"
             android:exported="false" />
